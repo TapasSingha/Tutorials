@@ -16,6 +16,7 @@
     <!--I had placed it inside a div before. That was obsolete. 
     From now on place class/ids on links-->
     <a href="#" class="brand">Travel</a>
+    <div class="menu-btn"></div>
     <div class="navigation">
       <div class="navigation-items">
         <a href="#">Home</a>
@@ -42,5 +43,15 @@
       </div>
     </section>
   </main>
+    <script type="text/javascript">
+    //Javacript for responsive navigation menu
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("active");
+    navigation.classList.toggle("active");
+  });
+  </script>
 </body>
 </html>
