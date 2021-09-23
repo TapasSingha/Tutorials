@@ -124,8 +124,46 @@ section{
     right:15px;
   }
   header .navigation{
-    display:none;  
+    display:none;
   }
+  header .navigation.active{
+    position:fixed;
+    top:0;
+    left:0;
+    /*For this to be successful, it needs to be top:0, left:0. Otherwise it stays on the top of the viewport despite having flex properties*/
+    width:100%;
+    height:100vh;
+    display:flex;
+    place-content:center;
+    place-items:center;
+    background:rgb(1, 1, 1, 0.5);
+  }
+  
+element {
+
+}
+header .navigation .navigation-items a {
+    color: #222;
+    font-size: 1.2em;
+    margin: 20px;
+}
+header .navigation .navigation-items a:before{
+  background:#222;
+  height:5px;
+}
+header .navigation .navigation-items{
+  background:#fff;
+  width:600px;
+  max-width:600px;
+  margin:20px;
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  place-items:center;
+  border-radius:5px;
+  box-shadow: 0 5px 25px rgb(1 1 1 /20%);
+}
+
   .menu-btn{
     background-size:30px;
     background: url(../img/menu.png)no-repeat;
