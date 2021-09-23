@@ -28,8 +28,13 @@
       </div>
     </div>
   </header>
-  <main>
+  <main> 
     <section class="home">
+      <video class="video-slide active" src="1.mp4" autoplay muted loop ></video>
+      <video class="video-slide" src="2.mp4" muted ></video>
+      <video class="video-slide" src="3.mp4" muted ></video>
+      <video class="video-slide" src="4.mp4" muted ></video>
+      <video class="video-slide" src="5.mp4" muted></video>
       <div class="content">
         <h1>Wonderful. <br> <span>Island</span></h1>
         <p>
@@ -42,6 +47,13 @@
         <a href="#"><i class="fab fa-twitter"></i></a>
         <a href="#"><i class="fab fa-instagram"></i></a>
       </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
     </section>
   </main>
   <script type="text/javascript">
@@ -52,6 +64,26 @@
     menuBtn.addEventListener("click", () => {
     menuBtn.classList.toggle("active");
     navigation.classList.toggle("active");
+  });
+  //Script for video slider navigation
+  const btns = document.querySelectorAll(".nav-btn");
+  const slides = document.querySelectorAll(".video-slide");
+
+  var sliderNav = function(manual){
+    btns.forEach((btn) => {
+      btn.classList.remove("active");
+    })
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    })
+    btns[manual].classList.add("active");
+    slides[manual].classList.add("active");
+  }
+
+  btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      sliderNav(i);
+    });
   });
   </script>
 </body>
